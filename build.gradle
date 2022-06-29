@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.kukim'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -15,8 +15,15 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+task copyGitSubmodule(type: Copy) {
+	from './config'
+	include '*.yml'
+	into './src/main/resources'
 }
