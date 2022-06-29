@@ -1,0 +1,4 @@
+[submodule "config"]
+  path = config
+  url = git@github.com:ku-kim/springboot-config-files-in-gitsubmodules.git
+  branch = main
